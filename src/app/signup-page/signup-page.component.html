@@ -1,0 +1,24 @@
+<div class="container" *ngIf="signUpBool">
+<h3>Please fill this form to start the test</h3>
+<form class="example-form" action="" [formGroup]="signUpForm" (ngSubmit)="getData()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter Username</mat-label>
+      <input matInput placeholder="Ex. Rishabh" formControlName="username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Password</mat-label>
+        <input matInput type="password" formControlName="password">
+    </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Email</mat-label>
+        <input matInput type="email" placeholder="Ex. rishabh103@gmail.com" formControlName="email">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Register</button>
+      
+</form>
+</div>
+  <div class="container" *ngIf="register">
+      <h3>Successfuly registered. <a routerLink="/login">Login</a> with credentials</h3>
+  </div>
+

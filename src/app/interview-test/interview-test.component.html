@@ -1,0 +1,40 @@
+<div class="container" *ngIf="count<=Totalcount">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-subtitle>Question - {{numberOfQuestion.id}}</mat-card-subtitle>
+          <mat-card-title>{{numberOfQuestion.Question}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-radio-group aria-label="Select an option" name="answerList" (change)="changeQuestion($event)">
+                <div *ngFor="let answer of numberOfQuestion.options"><br>
+                    <mat-radio-button  name="answerList" [value]="answer">{{answer}}</mat-radio-button><br>
+                </div>
+                
+            </mat-radio-group>
+        </mat-card-content>
+        <mat-card-actions>
+            <button *ngIf="count!=0" mat-raised-button color="primary" (click)="nextQuestion('DESC')">Previous</button>
+            <button *ngIf="count<Totalcount" mat-raised-button color="primary" (click)="nextQuestion('INC')">Next</button>
+            <button *ngIf="count==Totalcount" mat-raised-button color="primary" (click)="submitTest()" >Submit</button>
+        </mat-card-actions>
+      </mat-card>
+    <!-- Question - {{numberOfQuestion.id}}
+    <br>
+    {{numberOfQuestion.Question}}
+    <br>
+    
+    <mat-radio-group aria-label="Select an option" name="answerList" (change)="changeQuestion($event)">
+        <div *ngFor="let answer of numberOfQuestion.options">
+            <mat-radio-button  name="answerList" [value]="answer">{{answer}}</mat-radio-button><br>
+        </div>
+        
+    </mat-radio-group>
+    <br>
+    <button mat-raised-button color="primary" (click)="nextQuestion('INC')">Next</button>
+    <br>
+    <button mat-raised-button color="primary" (click)="nextQuestion('DESC')">Previous</button> -->
+</div>
+
+<div *ngIf="count>Totalcount">
+    <h4>You have reached end of test</h4>
+</div>

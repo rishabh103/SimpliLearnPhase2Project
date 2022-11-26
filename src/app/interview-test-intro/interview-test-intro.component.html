@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <span>Welcome {{username}}</span>
+  
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <a routerLink="/login"><span style="color:white;">Logout</span></a>
+</mat-toolbar>
+
+<div>
+    <h2>Please read the instructions. carefully</h2> <br>
+<ul>
+    <li><h3>The test consist of total 10 questions </h3></li>
+    <li><h3>No negative marking</h3></li>
+    <li><h3>Each queations has 4 choices out of which one is correct</h3></li>
+    <li><h3>Score above 70% to pass the test</h3></li>
+</ul>
+</div>
+<div class="container">
+    <a routerLink="/test"><button mat-raised-button color="primary" type="submit">Start Test</button></a>
+</div>

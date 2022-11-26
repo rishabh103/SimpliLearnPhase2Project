@@ -1,0 +1,16 @@
+<div class="container">
+    <h3>Please fill this form to start the test</h3>
+    <form class="example-form" action="" [formGroup]="loginForm" (ngSubmit)="submitData()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter Username</mat-label>
+          <input matInput placeholder="Ex. Rishabh" formControlName="username">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter Password</mat-label>
+            <input matInput type="password" formControlName="password">
+        </mat-form-field>
+      
+          <button mat-raised-button color="primary" type="submit">Login</button>
+          
+    </form>
+    </div>
